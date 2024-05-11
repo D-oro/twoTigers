@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspirational Quote Card</title>
+<link rel="stylesheet" type="text/css" href="twoTigers.css">
+</head>
+<body>
+    <div class="card">
+        <p id="sentence1" class="quote"></p> <!-- First paragraph for the first part of the sentence -->
+        <p id="sentence2" class="quote"></p> <!-- Second paragraph for the second part of the sentence -->
+    </div>
+    <button onclick="reloadPage()">More Wisdom</button> <!-- Button to reload the page -->
+    <p class="dedication">for Raj ♥ </p>
+    <script>
+        // Function to load JSON file using fetch
+        async function loadJSON(filename) {
+            const response = await fetch(filename);
+            const data = await response.json();
+            return data;
+        }
+
+        // Function to get a random element from an array
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        // Function to generate the sentence parts
+        async function generateSentenceParts() {
+            const animals = await loadJSON('animals.json');
+            const places = await loadJSON('places.json');
+
+            const randomAnimal = getRandomElement(animals);
+            const randomPlace = getRandomElement(places);
+
+            return {
+                part1: `Two ${randomAnimal}`,
+                part2: `cannot live in the same ${randomPlace}.`
+            };
+        }
+
+        // Get the paragraph elements for the sentence parts
+        const sentenceElement1 = document.getElementById('sentence1');
+        const sentenceElement2 = document.getElementById('sentence2');
+
+        // Generate the sentence parts and display them
+        generateSentenceParts().then(parts => {
+            sentenceElement1.textContent = parts.part1;
+            sentenceElement2.textContent = parts.part2;
+        });
+
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

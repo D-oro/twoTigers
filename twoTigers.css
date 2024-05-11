@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+.card {
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote {
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 2;
+  margin: 0;
+  color: #333;
+}
+
+button {
+  background-color: #f0f0f0; 
+  border: double 4px #ccc;
+  color: #333; 
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 2px; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #e2e2e2; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.dedication {
+  position: absolute;
+  bottom: 1vh;
+  color: #aaa;
+}
