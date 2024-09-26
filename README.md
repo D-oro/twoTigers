@@ -1,2 +1,2 @@
-# twoTigers
-https://d-oro.github.io/twoTigers/ 
+# [Two Tigers](https://d-oro.github.io/twoTigers/)
+A fountain of wisdom
